@@ -13,7 +13,6 @@ describe Libclub::Reader, '#books' do
     instance.books_lent << book_two
     instance.books_borrowed << book_three
 
-    expect(subject).to include(book_one)
-    expect(subject).to include(book_three)
+    expect(subject).to eql([book_one, book_three])
   end
 end
