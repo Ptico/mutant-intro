@@ -11,7 +11,7 @@ module Libclub
     end
 
     def borrow(book)
-      if book.owner.books_owned.include?(book)
+      unless book.owner.books_lent.include?(book)
         book.owner.books_lent << book
         books_borrowed << book
       end
