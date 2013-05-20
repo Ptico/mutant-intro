@@ -1,13 +1,14 @@
 module Libclub
   class Reader
     attr_accessor :books_owned, :books_borrowed, :books_lent
+    attr_reader :name
 
     def books
       books_owned - books_lent + books_borrowed
     end
 
     def books_count
-      boks.length
+      books.length
     end
 
     def borrow(book)
